@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+@theme {
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-scroll: scroll 40s linear infinite;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+
+    to {
+      height: 0;
+    }
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  /* Strict Light Mode Palette */
+  --background: hsl(0 0% 100%);
+  /* White */
+  --foreground: hsl(240 10% 9%);
+  /* Dark Charcoal #17171a */
+
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(240 10% 9%);
+
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(240 10% 9%);
+
+  --primary: hsl(240 5% 10%);
+  /* Nearly black */
+  --primary-foreground: hsl(0 0% 98%);
+
+  --secondary: hsl(240 4% 96%);
+  /* Very light gray */
+  --secondary-foreground: hsl(240 5.9% 10%);
+
+  --muted: hsl(240 4% 96%);
+  --muted-foreground: hsl(240 3.8% 46.1%);
+
+  --accent: hsl(240 4% 96%);
+  --accent-foreground: hsl(240 5.9% 10%);
+
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(0 0% 98%);
+
+  --border: hsl(240 5.9% 90%);
+  --input: hsl(240 5.9% 90%);
+  --ring: hsl(240 10% 3.9%);
+  --radius: 0.75rem;
+}
+
+/* Force light mode regardless of system pref */
+.dark {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(240 10% 9%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(240 10% 9%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(240 10% 9%);
+  --primary: hsl(240 5% 10%);
+  --primary-foreground: hsl(0 0% 98%);
+  --secondary: hsl(240 4% 96%);
+  --secondary-foreground: hsl(240 5.9% 10%);
+  --muted: hsl(240 4% 96%);
+  --muted-foreground: hsl(240 3.8% 46.1%);
+  --accent: hsl(240 4% 96%);
+  --accent-foreground: hsl(240 5.9% 10%);
+  --destructive: hsl(0 84.2% 60.2%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(240 5.9% 90%);
+  --input: hsl(240 5.9% 90%);
+  --ring: hsl(240 10% 3.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
 }
