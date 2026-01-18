@@ -4,6 +4,7 @@ import { motion, useAnimation, useMotionValue, useTransform } from "framer-motio
 import { ArrowRight, Download, MousePointer2 } from "lucide-react";
 import { PERSONAL_INFO } from "@/lib/data";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 const TypewriterText = ({ texts }: { texts: string[] }) => {
     const [index, setIndex] = useState(0);
@@ -125,52 +126,47 @@ export function Hero() {
             </div>
 
             {/* Visual Element on Right - Abstract Interactive Shapes */}
+            {/* Visual Element on Right - User Photo with Decorations */}
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, delay: 0.2 }}
                 className="relative mt-20 md:mt-0 md:ml-10 w-full max-w-md h-[400px] flex items-center justify-center"
             >
-                {/* Main geometric stack */}
-                <div className="relative w-64 h-64">
+                <div className="relative w-80 h-80">
+                    {/* Decorative rotating ring */}
                     <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-0 rounded-[2rem] border-[1px] border-gray-200"
+                        className="absolute inset-[-20px] rounded-full border border-dashed border-gray-200"
                     />
-                    <motion.div
-                        animate={{ rotate: -360 }}
-                        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-4 rounded-[2rem] border-[1px] border-gray-300 rotate-12"
-                    />
-                    <motion.div
-                        className="absolute inset-0 bg-gradient-to-tr from-gray-100 to-white rounded-[2rem] shadow-2xl flex items-center justify-center transform rotate-6 border border-white"
-                    >
-                        <div className="grid grid-cols-2 gap-4 p-8 opacity-20">
-                            <div className="w-16 h-4 bg-black rounded-full" />
-                            <div className="w-8 h-4 bg-gray-400 rounded-full" />
-                            <div className="w-24 h-4 bg-gray-300 rounded-full col-span-2" />
-                            <div className="w-full h-32 bg-gray-100 rounded-xl col-span-2" />
-                        </div>
-                    </motion.div>
+
+                    {/* Main Photo Container */}
+                    <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl">
+                        {PERSONAL_INFO.heroImage && (
+                            <Image
+                                src={PERSONAL_INFO.heroImage}
+                                alt={PERSONAL_INFO.name}
+                                fill
+                                className="object-cover object-top"
+                                priority
+                            />
+                        )}
+                    </div>
 
                     {/* Floating elements */}
                     <motion.div
                         animate={{ y: [-10, 10, -10] }}
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute -top-10 -right-10 bg-white p-4 rounded-2xl shadow-xl border border-gray-100"
+                        className="absolute top-10 -right-8 bg-white p-3 rounded-2xl shadow-xl border border-gray-100 z-10"
                     >
                         <MousePointer2 size={24} className="text-gray-900" />
                     </motion.div>
 
-                    <motion.div
-                        animate={{ y: [10, -10, 10] }}
-                        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute -bottom-5 -left-10 bg-white px-6 py-3 rounded-xl shadow-xl border border-gray-100 flex items-center gap-2"
-                    >
+                    <div className="absolute bottom-10 -left-8 bg-white px-5 py-2.5 rounded-xl shadow-xl border border-gray-100 flex items-center gap-2 z-10">
                         <div className="w-3 h-3 rounded-full bg-green-500" />
-                        <span className="text-sm font-semibold">100% Uptime</span>
-                    </motion.div>
+                        <span className="text-sm font-semibold">Tech Enthusiast</span>
+                    </div>
                 </div>
             </motion.div>
 

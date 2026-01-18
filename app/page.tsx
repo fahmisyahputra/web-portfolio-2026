@@ -25,6 +25,15 @@ export default function Home() {
             <ExperienceCard key={exp.id} experience={exp} />
           ))}
         </div>
+
+        <div className="mt-20 text-center">
+          <div className="inline-flex flex-col items-center gap-2">
+            <p className="text-xl text-gray-400 font-medium tracking-wide">
+              ...and many more exciting projects in the works.
+            </p>
+            <span className="text-sm text-gray-300">Staying curious, always building.</span>
+          </div>
+        </div>
       </section>
 
       <ContactSection />

@@ -14,22 +14,32 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
     const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
     const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
 
     useEffect(() => {
         if (!emblaApi) return;
 
+        const onInit = () => {
+            setScrollSnaps(emblaApi.scrollSnapList());
+        };
+
         const onSelect = () => {
+            setSelectedIndex(emblaApi.selectedScrollSnap());
             setPrevBtnEnabled(emblaApi.canScrollPrev());
             setNextBtnEnabled(emblaApi.canScrollNext());
         };
 
+        onInit();
         onSelect();
         emblaApi.on("select", onSelect);
+        emblaApi.on("reInit", onInit);
         emblaApi.on("reInit", onSelect);
     }, [emblaApi]);
 
     const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
     const scrollNext = () => emblaApi && emblaApi.scrollNext();
+    const scrollTo = (index: number) => emblaApi && emblaApi.scrollTo(index);
 
     if (!images || images.length === 0) {
         return (
@@ -48,13 +58,7 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
                 <div className="flex">
                     {images.map((src, index) => (
                         <div key={index} className="relative flex-[0_0_100%] min-w-0 aspect-video">
-                            {/* 
-                   Using a placeholder approach if image not found is tricky with next/image unless we use an error handler.
-                   For now, we render next/image. If it fails, it shows alt.
-                   Ideally we wrap this in a component that handles onError.
-                */}
                             <div className="relative h-full w-full bg-secondary/20 flex items-center justify-center">
-                                {/* Fallback visual if image doesn't load/exist (since user provided fake paths) */}
                                 <div className="absolute inset-0 flex items-center justify-center text-muted-foreground z-0">
                                     <ImageIcon size={48} className="opacity-20" />
                                 </div>
@@ -63,19 +67,29 @@ export function ImageCarousel({ images }: ImageCarouselProps) {
                                     alt={`Project screenshot ${index + 1}`}
                                     fill
                                     className="object-cover z-10"
-                                // In a real app we'd add onError handler to hide the image and show fallback
-                                // For this demo, since paths are fake, it will likely show broken image icon or alt text in browser.
-                                // I will add a 'unoptimized' prop so it doesn't 500 on Vercel with bad paths, 
-                                // but strictly speaking for nonexistent local files Next.js might complain.
-                                // For safety in this demo, I will conditionally render a "Mock Image" div if it looks like a placeholder path
-                                // But strictly following "no placeholder text" instruction, I should attempt to render it.
-                                // I'll stick to Next/Image.
                                 />
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
+
+            {/* Dots Pagination */}
+            {scrollSnaps.length > 1 && (
+                <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-20">
+                    {scrollSnaps.map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => scrollTo(index)}
+                            className={cn(
+                                "h-2 w-2 rounded-full transition-all bg-white/50 hover:bg-white/80 shadow-sm",
+                                index === selectedIndex && "bg-white w-4"
+                            )}
+                            aria-label={`Go to slide ${index + 1}`}
+                        />
+                    ))}
+                </div>
+            )}
 
             {images.length > 1 && (
                 <>

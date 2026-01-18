@@ -43,7 +43,7 @@ export function ContactSection() {
                     transition={{ duration: 0.5 }}
                 >
                     <div className="inline-block rounded-full bg-green-100 px-4 py-1.5 mb-6">
-                        <span className="text-sm font-semibold text-green-700">Open for Work & Internships</span>
+                        <span className="text-sm font-semibold text-green-700">Open for Work, Internships or Projects</span>
                     </div>
                     <h2 className="text-4xl font-bold tracking-tight text-gray-900 mb-6">
                         Let's Build Something Together
@@ -54,7 +54,7 @@ export function ContactSection() {
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
                         <a
-                            href="/cv.pdf"
+                            href="/cv/CV ATS Fahmi - Januari 2026.pdf"
                             target="_blank"
                             className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white rounded-xl font-semibold hover:bg-gray-800 hover:scale-105 transition-all shadow-lg shadow-gray-200"
                         >

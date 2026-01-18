@@ -59,8 +59,8 @@ export default async function ProjectPage({ params }: Props) {
                 </div>
 
                 <div className="mb-12 overflow-hidden rounded-2xl shadow-sm border border-gray-100">
-                    {/* Using new single image data as array for carousel */}
-                    <ImageCarousel images={[experience.image]} />
+                    {/* Use carousel images if available, otherwise fallback to single thumbnail */}
+                    <ImageCarousel images={experience.images || [experience.image]} />
                 </div>
 
                 <div className="grid gap-12 md:grid-cols-3">
@@ -70,7 +70,7 @@ export default async function ProjectPage({ params }: Props) {
                             {experience.description}
                         </p>
 
-                        {/* Visual separator or additional content area if needed */}
+                        {/* Visual separator */}
                         <div className="h-px w-full bg-gray-100 my-8"></div>
                     </div>
 
