@@ -3,6 +3,8 @@ import { ExperienceCard } from "@/components/ExperienceCard";
 import { TechMarquee } from "@/components/TechMarquee";
 import { ContactSection } from "@/components/ContactSection";
 import { EXPERIENCES } from "@/lib/data";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
@@ -32,6 +34,13 @@ export default function Home() {
               ...and many more exciting projects in the works.
             </p>
             <span className="text-sm text-gray-300">Staying curious, always building.</span>
+
+            <Link
+              href="/portfolio-print"
+              className="mt-6 inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-gray-200 bg-white text-gray-600 font-medium hover:bg-gray-50 hover:border-gray-300 transition-all text-sm shadow-sm"
+            >
+              View Portfolio Summary PDF <ArrowRight size={14} />
+            </Link>
           </div>
         </div>
       </section>
