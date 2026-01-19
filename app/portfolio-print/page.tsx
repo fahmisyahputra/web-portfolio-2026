@@ -87,7 +87,7 @@ export default function PrintablePortfolio() {
                                             </div>
 
                                             <p className="text-sm text-gray-700 mb-3 leading-snug">
-                                                {exp.description}
+                                                {exp.description.replace(/\{\{IMAGE_INDEX_\d+\}\}/g, "")}
                                             </p>
 
                                             {/* Tech Stack */}
