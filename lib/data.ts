@@ -8,6 +8,8 @@ export interface Experience {
   tech: string[];
   image: string; // Primary thumbnail
   images?: string[]; // Gallery/Carousel images
+  summary?: string; // Short description for cards
+  achievements?: string[]; // List of key achievements
 }
 
 export const PERSONAL_INFO = {
@@ -35,8 +37,25 @@ export const EXPERIENCES: Experience[] = [
     "title": "Chief Technology Officer (CTO)",
     "company": "PT. Tuladha Parenting Consulting",
     "period": "2024 - Present",
-    "description": "Led the end-to-end development of digital services, secured funding from P2MW, and built features for parenting insights.",
-    "tech": ["CMS", "Next.js", "Business Strategy"],
+    "summary": "Secured national funding from Kemendikbudristek (P2MW 2024) to build a holistic parenting platform. As CTO, I led the end-to-end technical strategy, from product development to business integration.",
+    "description": `Tuladha is a tech-based startup dedicated to providing holistic support for parents through expert guidance and accessible resources.
+
+Our biggest milestone was successfully securing funding from the Program Pembinaan Mahasiswa Wirausaha (P2MW) 2024 by Kemendikbudristek. This trust empowered us to accelerate our mission and legitimize our business entity.
+
+{{IMAGE_INDEX_1}}
+My Journey as CTO:
+Beyond just writing code, my role required bridging the gap between technology and business goals. I led the development of our core digital services, ensuring they weren't just functional but genuinely helpful for parents. From building the Parenting Style Test to integrating Booking systems, every feature was crafted to drive user engagement and trust.
+
+I was also deeply involved in the strategic side on delivering the pitch deck that won us the P2MW funding and aligning our technical roadmap with our business growth.`,
+    "tech": ["Next.js", "CMS", "Business Strategy", "Product Management", "Fundraising & Pitching", "Startup Operations", "Tech Leadership"],
+    "achievements": [
+      "🏅 National Funding Awardee: Secured grant from Kemendikbudristek (P2MW 2024).",
+      "🚀 Top 40 Startup: Selected Finalist in BEKUP (BAPEKRAF) by Kemenparekraf.",
+      "🏆 Top 10 Finalist: ITS Demo Day 2024 Pitching Competition.",
+      "📈 Market Validation: Achieved 100% of sales target during the first pilot launch.",
+      "⚖️ Legal Establishment: Oversaw the registration of PT, NIB, and Trademark Rights.",
+      "💻 Product Leadership: Built and deployed tuladhaparenting.com from scratch."
+    ],
     "image": "/images/cto-tuladha/1-hero-web-tuladha.png",
     "images": [
       "/images/cto-tuladha/1-hero-web-tuladha.png",
@@ -52,8 +71,17 @@ export const EXPERIENCES: Experience[] = [
     "title": "IT & Design Intern",
     "company": "PT. PLN Nusantara Power",
     "period": "June - Sept 2025",
-    "description": "Designed centralized Master Data Management dashboard and engineered middleware for EAM systems using Python Streamlit and Node.js.",
-    "tech": ["Python", "Streamlit", "Node.js", "IBM Maximo"],
+    "summary": "Designed and engineered a centralized Master Data Management (MDM) Dashboard to standardize asset data across legacy systems. Architected a custom Node.js middleware for IBM Maximo synchronization and built a high-performance Python Streamlit visualization interface.",
+    "description": `During my internship at PT PLN Nusantara Power, I identified a critical challenge in managing the vast data of power plant assets: fragmentation across multiple legacy systems. Realizing that effective decision-making relies on unified data, I took the initiative to design and engineer a Centralized Master Data Management (MDM) Dashboard, and update it to the Manager and the Mentor in Sprint Progress meeting every 2 weeks.
+
+{{IMAGE_INDEX_1}}
+My role went beyond basic development. I architected a custom middleware solution using Node.js to orchestrate seamless data synchronization between the core IBM Maximo EAM and various internal ERP platforms via WSO2 API Manager. To visualize this complex data, I built a high-performance, interactive dashboard using Python Streamlit.
+
+{{IMAGE_INDEX_8}}
+This system successfully bridged the gap between disparate data sources, providing management with a standardized view of asset health and maintenance enhancing the efficiency of operational reporting in PT. PLN Nusantara Power.
+
+{{IMAGE_INDEX_2}}`,
+    "tech": ["Master Data Management (MDM)", "Python", "Streamlit", "Node.js", "IBM Maximo", "WSO2 API Manager", "Ellipse ERP"],
     "image": "/images/pln-itd-intern/1-pln.jpeg",
     "images": [
       "/images/pln-itd-intern/1-pln.jpeg",
@@ -74,8 +102,13 @@ export const EXPERIENCES: Experience[] = [
     "title": "Head of IT Development",
     "company": "HMTC ITS",
     "period": "2025",
-    "description": "Managing UI/UX, Frontend, and Backend teams. Leading development using Next.js, TypeScript, and Golang.",
-    "tech": ["Leadership", "Project Management", "Golang"],
+    "summary": "Oversee the entire product lifecycle of the organization's digital ecosystem. Leading a cross-functional team, I established a structured SDLC and adopted a modern tech stack featuring Golang and Next.js to ensure delivery excellence.",
+    "description": `As the Head of IT Development at HMTC ITS, I am responsible for more than just code but I oversee the entire product lifecycle of the organization's digital ecosystem. Leading a cross-functional team of UI/UX Designers, Frontend, and Backend Developers, I established a structured software development lifecycle (SDLC) to ensure delivery excellence.
+
+{{IMAGE_INDEX_2}}
+
+I spearheaded the technical decision to adopt a modern, high-performance tech stack featuring Golang for backend services and Next.js (TypeScript) for the frontend. Beyond technology, I implemented engineering best practices including rigorous code reviews, standardized documentation, and Agile workflows to maintain code quality and foster a collaborative environment for student developers.`,
+    "tech": ["Leadership", "Project Management", "System Design", "Golang", "Next.js"],
     "image": "/images/head-itdev-hmtc/1-hmtc.png",
     "images": [
       "/images/head-itdev-hmtc/1-hmtc.png",

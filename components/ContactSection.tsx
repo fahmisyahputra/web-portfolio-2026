@@ -45,9 +45,14 @@ export function ContactSection() {
                     <div className="inline-block rounded-full bg-green-100 px-4 py-1.5 mb-6">
                         <span className="text-sm font-semibold text-green-700">Open for Work, Internships or Projects</span>
                     </div>
-                    <h2 className="text-4xl font-bold tracking-tight text-gray-900 mb-6">
-                        Let's Build Something Together
-                    </h2>
+                    <motion.div
+                        animate={{ y: [0, -10, 0] }}
+                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                        <h2 className="text-4xl font-bold tracking-tight text-gray-900 mb-6">
+                            Let's Build Something Together
+                        </h2>
+                    </motion.div>
                     <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
                         I am actively seeking opportunities to contribute my skills in fullstack development and system engineering. Whether it's a project, internship, or full-time role, I'd love to chat.
                     </p>
