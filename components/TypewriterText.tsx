@@ -45,9 +45,9 @@ export const TypewriterText = ({ texts, speed = 80, waitTime = 2000, className =
     }, []);
 
     return (
-        <span className={`inline-flex items-center ${className}`}>
+        <span className={`${className}`}>
             {texts[index].substring(0, subIndex)}
-            <span className={`ml-1 w-[2px] h-[1em] bg-current ${blink ? "opacity-100" : "opacity-0"}`}></span>
+            <span className={`inline-block ml-0.5 w-[2px] h-[1em] bg-current align-middle ${blink ? "opacity-100" : "opacity-0"}`}></span>
         </span>
     );
 };
