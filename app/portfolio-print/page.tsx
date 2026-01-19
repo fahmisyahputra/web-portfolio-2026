@@ -12,7 +12,7 @@ export default function PrintablePortfolio() {
     };
 
     return (
-        <div className="min-h-screen bg-gray-100 pt-28 pb-10 px-0 md:p-8 print:p-0 print:bg-white flex justify-center items-start overflow-hidden">
+        <div className="min-h-screen bg-gray-100 pt-24 pb-10 px-0 md:p-8 print:p-0 print:bg-white flex justify-center items-start overflow-hidden">
             {/* Scaled Wrapper for Mobile */}
             <div className="w-full h-full flex justify-center [zoom:0.45] md:[zoom:1]">
                 {/* A4 Container */}
