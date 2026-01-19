@@ -13,10 +13,10 @@ export default function PrintablePortfolio() {
 
     return (
         <div className="min-h-screen bg-gray-100 pt-24 pb-10 px-0 md:p-8 print:p-0 print:bg-white flex justify-center items-start overflow-hidden">
-            {/* Scaled Wrapper for Mobile */}
-            <div className="w-full h-full flex justify-center [zoom:0.45] md:[zoom:1]">
+            {/* Scaled Wrapper for Mobile: Removed scaling, using responsive layout instead */}
+            <div className="w-full h-full flex justify-center md:[zoom:1]">
                 {/* A4 Container */}
-                <main className="w-[210mm] min-h-[297mm] bg-white shadow-2xl print:shadow-none print:w-full print:m-0 p-[15mm] text-gray-900 font-sans leading-relaxed relative mx-auto my-0">
+                <main className="w-full md:w-[210mm] min-h-screen md:min-h-[297mm] bg-white shadow-none md:shadow-2xl print:shadow-none print:w-full print:m-0 p-6 md:p-[15mm] text-gray-900 font-sans leading-relaxed relative mx-auto my-0">
 
                     {/* Header */}
                     <header className="border-b-2 border-gray-900 pb-6 mb-8 flex justify-between items-start">

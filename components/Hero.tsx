@@ -39,7 +39,7 @@ export function Hero() {
                         View My Work <ArrowRight size={16} />
                     </a>
                     <a
-                        href="/cv.pdf"
+                        href="/cv/CV ATS Fahmi - Januari 2026.pdf"
                         target="_blank"
                         className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-8 py-4 text-sm font-semibold text-gray-900 transition-all hover:bg-gray-50 hover:border-gray-300 active:scale-95"
                     >
