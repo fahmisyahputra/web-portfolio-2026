@@ -16,9 +16,9 @@ export default function ExperienceSection() {
             </ScrollReveal>
 
             <div className="flex flex-col gap-8">
-                {EXPERIENCES.map((exp, index) => (
-                    <ScrollReveal key={exp.id} width="100%" delay={index * 0.1}>
-                        <ExperienceCard experience={exp} />
+                {EXPERIENCES.map((experience, index) => (
+                    <ScrollReveal key={experience.id} width="100%" delay={index * 0.1}>
+                        <ExperienceCard experience={experience} />
                     </ScrollReveal>
                 ))}
             </div>

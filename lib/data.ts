@@ -6,10 +6,10 @@ export interface Experience {
   period: string;
   description: string;
   tech: string[];
-  image: string; // Primary thumbnail
-  images?: string[]; // Gallery/Carousel images
-  summary?: string; // Short description for cards
-  achievements?: string[]; // List of key achievements
+  image: string;
+  images?: string[];
+  summary?: string;
+  achievements?: string[];
 }
 
 export const PERSONAL_INFO = {

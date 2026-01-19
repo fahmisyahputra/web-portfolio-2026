@@ -1,7 +1,9 @@
-import { Hero } from "@/components/Hero";
-import { ScrollReveal } from "@/components/ScrollReveal";
 import dynamic from "next/dynamic";
 
+import { Hero } from "@/components/Hero";
+import { ScrollReveal } from "@/components/ScrollReveal";
+
+// Dynamic Imports for Performance
 const TechMarquee = dynamic(() => import("@/components/TechMarquee").then(mod => mod.TechMarquee));
 const ExperienceSection = dynamic(() => import("@/components/ExperienceSection"));
 const ContactSection = dynamic(() => import("@/components/ContactSection").then(mod => mod.ContactSection));

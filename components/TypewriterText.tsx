@@ -36,7 +36,6 @@ export const TypewriterText = ({ texts, speed = 80, waitTime = 2000, className =
         return () => clearTimeout(timeout);
     }, [subIndex, index, reverse, texts, speed, waitTime]);
 
-    // Blink cursor effect
     useEffect(() => {
         const timeout2 = setInterval(() => {
             setBlink((prev) => !prev);

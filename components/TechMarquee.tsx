@@ -8,8 +8,8 @@ export function TechMarquee() {
             <div className="relative flex w-full max-w-5xl mx-auto overflow-hidden">
                 <div className="flex animate-scroll whitespace-nowrap">
                     {/* Repeat the skills list multiple times to ensure smooth infinite scroll */}
-                    {[...Array(2)].map((_, i) => (
-                        <div key={i} className="flex gap-8 mx-4">
+                    {[...Array(2)].map((_, index) => (
+                        <div key={index} className="flex gap-8 mx-4">
                             {SKILLS.map((skill) => (
                                 <div
                                     key={skill}
