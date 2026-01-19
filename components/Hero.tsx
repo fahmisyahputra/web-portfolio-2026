@@ -1,9 +1,10 @@
-import { ArrowRight, Download, MousePointer2 } from "lucide-react";
-import { PERSONAL_INFO } from "@/lib/data";
-import Image from "next/image";
-import { TypewriterText } from "./TypewriterText";
-import { FloatingWrapper } from "./FloatingWrapper";
 import Link from "next/link";
+import Image from "next/image";
+import { ArrowRight, Download, MousePointer2 } from "lucide-react";
+
+import { PERSONAL_INFO } from "@/lib/data";
+import { FloatingWrapper } from "./FloatingWrapper";
+import { TypewriterText } from "./TypewriterText";
 
 export function Hero() {
     return (
@@ -48,13 +49,11 @@ export function Hero() {
                 </div>
             </div>
 
-            {/* Visual Element on Right - User Photo with Decorations */}
             <div className="relative mt-20 md:mt-0 md:ml-10 w-full max-w-md h-[400px] flex items-center justify-center">
                 <div className="relative w-80 h-80">
-                    {/* Decorative rotating ring - using CSS animation for best performance */}
                     <div className="absolute inset-[-20px] rounded-full border border-dashed border-gray-200 animate-[spin_50s_linear_infinite]" />
 
-                    {/* Main Photo Container */}
+
                     <FloatingWrapper
                         className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl"
                         duration={6}
@@ -73,7 +72,7 @@ export function Hero() {
                         )}
                     </FloatingWrapper>
 
-                    {/* Floating elements */}
+
                     <FloatingWrapper
                         className="absolute top-10 -right-8 bg-white p-3 rounded-2xl shadow-xl border border-gray-100 z-10"
                         duration={4}

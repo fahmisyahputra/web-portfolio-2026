@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+
+import { JsonLd } from "@/components/JsonLd";
+import { LazyMotionWrapper } from "@/components/LazyMotionWrapper";
 import { Navbar } from "@/components/Navbar";
 import { PERSONAL_INFO } from "@/lib/data";
-import { LazyMotionWrapper } from "@/components/LazyMotionWrapper";
-import { JsonLd } from "@/components/JsonLd";
+
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

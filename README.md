@@ -1,6 +1,4 @@
-# Muhammad Fahmi Syahputra - Portfolio
-
-![Portfolio Banner](/public/images/hero-section/self-picture.jpeg)
+# Portfolio - Muhammad Fahmi Syahputra
 
 > **Fullstack Engineer & Tech Lead based in Surabaya, Indonesia.**  
 > Specializing in Next.js, Typescript, and Scalable System Architecture.
@@ -12,12 +10,12 @@
 
 ## 🚀 Overview
 
-This repository houses the personal portfolio of **Muhammad Fahmi Syahputra**. It serves as a showcase of my technical expertise, featuring detailed case studies of my work as:
+This repository houses the personal portfolio of **Muhammad Fahmi Syahputra**. It serves as a showcase of technical expertise, featuring detailed case studies of work as:
 *   **CTO** at *Tuladha Parenting Consulting* (P2MW Funded).
 *   **Head of IT Development** at *HMTC ITS*.
 *   **Fullstack Engineer** for various enterprise and startup projects.
 
-The application is built with a focus on **performance**, **SEO**, and **print-friendliness**.
+The application is built with a strict focus on **performance (Core Web Vitals)**, **SEO**, and **accessibility**.
 
 ## ✨ Key Features
 

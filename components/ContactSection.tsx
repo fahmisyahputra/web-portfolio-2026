@@ -1,9 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Mail, Linkedin, Phone, Instagram, ArrowUpRight, Download } from "lucide-react";
-import { PERSONAL_INFO } from "@/lib/data";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { ArrowUpRight, Download, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+
+import { PERSONAL_INFO } from "@/lib/data";
 
 export function ContactSection() {
     const socialLinks = [
