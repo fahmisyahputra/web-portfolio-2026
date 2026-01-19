@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { PERSONAL_INFO } from "@/lib/data";
 import { LazyMotionWrapper } from "@/components/LazyMotionWrapper";
+import { JsonLd } from "@/components/JsonLd";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,45 +21,48 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://fahmisyahputra.my.id"),
   title: {
-    default: `${PERSONAL_INFO.name} - Fullstack Engineer`,
-    template: `%s | ${PERSONAL_INFO.name}`,
+    default: "Muhammad Fahmi Syahputra - Web Developer & CTO",
+    template: "%s | Muhammad Fahmi Syahputra",
   },
-  description: PERSONAL_INFO.about,
+  description:
+    "Portfolio of Muhammad Fahmi Syahputra, an Informatics Engineering Student at ITS, Web Developer, and CTO of Tuladha Parenting. Expert in Next.js, TypeScript, and IT Leadership.",
   keywords: [
     "Muhammad Fahmi Syahputra",
     "Fahmi Syahputra",
+    "Web Developer Surabaya",
+    "Next.js Developer Indonesia",
+    "CTO Tuladha",
+    "Mahasiswa ITS",
     "Portfolio",
-    "Fullstack Engineer",
-    "Software Engineer",
-    "Web Developer",
-    "React Developer",
-    "Next.js Developer",
-    "Surabaya",
-    "ITS",
   ],
-  authors: [{ name: PERSONAL_INFO.name, url: "https://fahmisyahputra.my.id" }],
-  creator: PERSONAL_INFO.name,
+  authors: [{ name: "Muhammad Fahmi Syahputra", url: "https://fahmisyahputra.my.id" }],
+  creator: "Muhammad Fahmi Syahputra",
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "id_ID",
     url: "https://fahmisyahputra.my.id",
-    title: `${PERSONAL_INFO.name} - Fullstack Engineer`,
-    description: PERSONAL_INFO.about,
-    siteName: `${PERSONAL_INFO.name} Portfolio`,
+    title: "Muhammad Fahmi Syahputra - Web Developer & CTO",
+    description:
+      "Portfolio of Muhammad Fahmi Syahputra, an Informatics Engineering Student at ITS, Web Developer, and CTO of Tuladha Parenting.",
+    siteName: "Muhammad Fahmi Syahputra",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.jpg", // Ensure this exists or fallback to hero
         width: 1200,
         height: 630,
-        alt: `${PERSONAL_INFO.name} Portfolio`,
+        alt: "Muhammad Fahmi Syahputra Portfolio",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${PERSONAL_INFO.name} - Fullstack Engineer`,
-    description: PERSONAL_INFO.about,
+    title: "Muhammad Fahmi Syahputra - Web Developer & CTO",
+    description:
+      "Portfolio of Muhammad Fahmi Syahputra, an Informatics Engineering Student at ITS, Web Developer, and CTO of Tuladha Parenting.",
     images: ["/og-image.jpg"],
+  },
+  verification: {
+    google: "YOUR_VERIFICATION_CODE",
   },
   robots: {
     index: true,
@@ -73,30 +77,6 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: PERSONAL_INFO.name,
-  url: "https://fahmisyahputra.my.id",
-  jobTitle: "Fullstack Engineer",
-  worksFor: {
-    "@type": "Organization",
-    name: "Independent",
-  },
-  sameAs: [
-    PERSONAL_INFO.linkedin,
-    PERSONAL_INFO.instagram,
-    `https://github.com/fahmisyahputra`,
-  ],
-  description: PERSONAL_INFO.about,
-  image: `https://fahmisyahputra.my.id${PERSONAL_INFO.heroImage}`,
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Surabaya",
-    addressCountry: "Indonesia",
-  },
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -107,10 +87,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen bg-background text-foreground`}
       >
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd />
         <LazyMotionWrapper>
           <Navbar />
           {children}
