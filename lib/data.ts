@@ -34,7 +34,7 @@ export const EXPERIENCES: Experience[] = [
   {
     "id": "petrokimia-gresik",
     "slug": "petrokimia-gresik",
-    "title": "Full-Stack Developer Intern Staff (Magenta BUMN)",
+    "title": "Full-Stack Developer Intern (Magenta BUMN)",
     "company": "PT Petrokimia Gresik",
     "period": "2026",
     "summary": "Architected and deployed enterprise-grade web applications to solve complex operational bottlenecks and enhance employee well-being across a massive enterprise workforce.",
