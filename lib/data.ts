@@ -34,9 +34,9 @@ export const EXPERIENCES: Experience[] = [
   {
     "id": "petrokimia-gresik",
     "slug": "petrokimia-gresik",
-    "title": "Full-Stack Product Engineer (Magenta BUMN)",
+    "title": "Full-Stack Developer Intern Staff (Magenta BUMN)",
     "company": "PT Petrokimia Gresik",
-    "period": "2024",
+    "period": "2026",
     "summary": "Architected and deployed enterprise-grade web applications to solve complex operational bottlenecks and enhance employee well-being across a massive enterprise workforce.",
     "description": `Selected as one of 44 top talents from a highly competitive pool of over 2,100 candidates for the prestigious Magenta BUMN program by the Ministry of State-Owned Enterprises (Kementerian BUMN), I was entrusted to accelerate digital transformation within the Human Capital Department at PT Petrokimia Gresik. Operating at the intersection of software engineering and corporate HR strategy, I architected and deployed enterprise-grade web applications to solve complex operational bottlenecks and enhance employee well-being across a massive enterprise workforce.
 
@@ -45,7 +45,7 @@ As a Full-Stack Product Engineer, I led the end-to-end development of PetroCare,
 In parallel, I designed and deployed two robust talent acquisition systems: the Petrokimia Future Leader Program (PFLP) portal and the Internal Recruitment Website. These systems were engineered to securely process large-scale applicant data, automate screening workflows, and eliminate manual administrative overhead, significantly optimizing the recruitment lifecycle for the HR Operations team.
 
 Beyond writing clean and scalable code, this role highlighted my ability to translate high-level Human Capital strategies into secure, high-performance digital products, driving measurable business impact.`,
-    "tech": ["Laravel", "Web Development", "System Design", "Gemini API", "Full-Stack"],
+    "tech": ["Full-Stack Dev", "Laravel", "Next.js", "Web Development", "System Design", "UI/UX", "Figma"],
     "image": "/images/petrokimia/1-petrokimia.jpeg",
     "images": [
       "/images/petrokimia/1-petrokimia.jpeg"
